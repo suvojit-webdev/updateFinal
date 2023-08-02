@@ -1,0 +1,306 @@
+<main>
+  <div class="container mt-4 banner-container">
+    <img
+      src="assets/img/banner2.jpg"
+      alt="Overlay Image"
+      class="overlay-image"
+      width="1300"
+    />
+    <div class="overlay-text">
+      <h1 class="custom-h1">Sale on now</h1>
+      <p class="custom-p">
+        We have special savings for logged-in visitors. <br />
+        See how much you can save.
+      </p>
+      <button class="custom-button" routerLink="/courses">Learn More</button>
+    </div>
+  </div>
+
+  <br>
+
+  <!-- error start -->
+  <div class="container">
+    <h1>A broad selection of courses</h1>
+    <p>
+      Choose from over 210,000 online video courses with new additions published
+      every month
+    </p>
+  </div>
+
+  <!-- filter1 (A broad selection of courses)-->
+  <div class="container mb-3">
+    <div class="options-column">
+      <button class="btn btn-success" *ngFor="let option of options" (click)="showCard(option)">
+        {{ option.title }}
+      </button>
+    </div>
+    <!-- this comment is not working & css name-->
+    <!-- <div class="card small-card" *ngIf="selectedOption">
+      <img [src]="selectedOption.imageSrc" alt="Image"/>
+      <div class="card-body text-center">
+        <h5 class="card-title">{{ selectedOption.title }}</h5>
+        <p class="card-text">{{ selectedOption.content }}</p>
+        <a (click)="addToCart()" class="btn btn-primary">Add to Cart</a>
+      </div>
+    </div> -->
+
+    <div class="card" style="width: 13rem;" *ngIf="selectedOption">
+      <img [src]="selectedOption.imageSrc" alt="Image"/>
+      <div class="card-body text-center">
+        <h5 class="card-title">{{ selectedOption.title }}</h5>
+        <p class="card-text">{{ selectedOption.content }}</p>
+        <a (click)="addToCart()" class="btn btn-primary">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Off-canvas sidebar -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" [class.show]="selectedOption">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">{{ selectedOption?.title }}</h5>
+      <button type="button" class="btn-close text-reset" (click)="showCard(null)"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p *ngIf="selectedOption">{{ selectedOption.content }}</p>
+      <p *ngIf="selectedOption">Price: {{ selectedOption.price }}</p>
+    </div>
+  </div>
+
+  <!-- error end -->
+
+
+  <br><br>
+
+
+
+  <div class="container mb-5">
+    <div class="owl-carousel owl-theme">
+      <div class="card" *ngFor="let course of courses" style="height: 400px;">
+        <img [src]="course.image" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">{{ course.title }}</h5>
+          <p class="card-text">{{ course.author }}</p>
+          <p class="card-text">
+            <b class="discounted-price m-2">{{ course.discountedPrice | currency : "INR" }}</b>
+            <s><b>{{ course.price | currency : "INR" : "symbol" : "4.2-2" }}</b></s>
+          </p>
+          <div *ngIf="course.isBestSeller" class="badge text-bg-warning">Best Seller</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  
+
+
+
+
+  <section>
+    <div class="container mb-4">
+      <h2><b>How learners like you are achieving their goals</b></h2>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mb-3" *ngFor="let testimonial of testimonials">
+        <div class="card testimonial-card d-flex flex-column h-100">
+          <img [src]="testimonial.image" class="card-img-top" />
+          <div class="card-body d-flex flex-column">
+            <h5>{{ testimonial.text }}</h5>
+            <p class="mt-auto">
+              <i class="bi bi-person-circle"></i><b> {{ testimonial.name }} </b>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <section class="container mb-5 mt-4 text-center">
+    <div>
+      <b><h1 class="mb-4">Top Categories</h1></b>
+      <div class="row">
+        <div class="col-md-3" *ngFor="let category of categories">
+          <div class="card mb-4">
+            <img [src]="category.image">
+            <div class="card-body">
+              <h5 class="card-title">{{ category.title }}</h5>
+              <a class="btn btn-primary" routerLink="/design">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+  <section class="container mb-5 mt-4 text-center">
+    <div>
+      <b><h1 class="mb-4">Top Categories</h1></b>
+      <div class="row">
+        <div class="col-md-3" *ngFor="let category of categories">
+          <div class="card mb-4">
+            <img [src]="category.image" class="card-img-top category-image mt-4">
+            <div class="card-body">
+              <h5 class="card-title">{{ category.title }}</h5>
+              <a class="btn btn-primary" routerLink="/design">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+
+
+  <section>
+    <div class="container text-center">
+      <h2 class="mt-4">Our students are placed at</h2>
+      <div class="row">
+        <div class="col-md-4 mb-3" *ngFor="let company of topCompanies">
+          <img
+            [src]="company.logo"
+            class="img-fluid"
+            style="max-width: 200px"
+          />
+        </div>
+      </div>
+      <button class="btn btn-primary">Download Report</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="container pt-5 text-center">
+      <div class="row">
+        <div class="col-md-4 mb-2" *ngFor="let card of cards">
+          <div class="card card-custom">
+            <div class="card-body text-center">
+              <h3 class="mb-0" [style.fontSize]="'2em'">{{ card.rating }}</h3>
+              <ng-container *ngFor="let i of [1, 2, 3, 4, 5]">
+                <i class="bi bi-star-fill" *ngIf="i <= card.stars"></i>
+                <i class="bi bi-star-half" *ngIf="i === card.stars + 0.5"></i>
+              </ng-container>
+              <p class="mb-0">{{ card.reviews }} reviews</p>
+              <p class="mb-0">{{ card.answered }}</p>
+              <p style="font-size: 50px;">{{ card.company }}</p>
+              <!-- <img [src]="card.image" class="img-fluid" style="width: 50px;" /> -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <br />
+
+  <!-- contact form using formbuilder -->
+  <section class="con">
+    <div class="container cf">
+      <h2 class="text-center ct">Contact Us</h2>
+      <h3 class="cto">Have any queries?</h3>
+      <p class="ctoo">Get a free counselling session from our experts</p>
+      <div class="row">
+        <div class="col-md-5">
+          <img src="assets/img/contact/5124556.jpg" alt="Contact Us" class="img-fluid" height="50%" width="100%" style="mix-blend-mode: multiply"/>
+        </div>
+        <div class="col-md-7 mt-5">
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="name"><b>Full Name</b></label>
+              <input type="text" class="form-control" id="name" formControlName="fullName" placeholder="Enter Full Name *"/>
+              <ng-container *ngIf="contactForm.get('fullName')?.touched">
+                <ng-container
+                  *ngIf="contactForm.get('fullName')?.hasError('required')"
+                >
+                  <p style="color: red">*Required</p>
+                </ng-container>
+              </ng-container>
+            </div>
+            <div class="form-group">
+              <label for="email"><b>Email</b></label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                formControlName="email"
+                placeholder="Enter Email Address *"
+              />
+              <ng-container *ngIf="contactForm.get('email')?.touched">
+                <ng-container
+                  *ngIf="contactForm.get('email')?.hasError('required')"
+                >
+                  <p style="color: red">*Required</p>
+                </ng-container>
+              </ng-container>
+            </div>
+            <div class="form-group">
+              <label for="phone"><b>Contact Number</b></label>
+              <input
+                type="phone"
+                class="form-control"
+                id="phone"
+                formControlName="phone"
+                placeholder="Contact Number *"
+              />
+              <ng-container *ngIf="contactForm.get('phone')?.touched">
+                <ng-container
+                  *ngIf="contactForm.get('phone')?.hasError('required')"
+                >
+                  <p style="color: red">*Required</p>
+                </ng-container>
+              </ng-container>
+            </div>
+
+            <div class="form-group">
+              <label for="location"><b>Location</b></label>
+              <!-- <input type="text" class="form-control" id="location" formControlName="location" placeholder="Enter custom location"/> -->
+              <select class="form-control" formControlName="location">
+                <option value="">Select a Location</option>
+                <option *ngFor="let loc of locations">{{ loc }}</option>
+              </select>
+              <ng-container *ngIf="contactForm.get('location')?.touched">
+                <ng-container
+                  *ngIf="contactForm.get('location')?.hasError('required')"
+                >
+                  <p style="color: red">*Required</p>
+                </ng-container>
+              </ng-container>
+            </div>
+            <button type="submit" class="btn btn-primary cli">Submit</button>
+            &nbsp;&nbsp;
+            <button class="btn btn-secondary cli" (click)="clearForm()">
+              Clear
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <h1 class="text-center mb-5">Upcoming Events</h1>
+  <section>
+      <div class="owl-carousel owl-theme">
+        <div class="item" *ngFor="let event of events">
+          <img [src]="event.image" [alt]="event.title" />
+          <h4>{{ event.title }}</h4>
+          <p><b>Starts on</b></p>
+          <h5>{{ event.date }}</h5>
+        </div>
+      </div>
+  </section>
+
+</main>
+
+<br />
+
+<!-- over website back to top -->
+<app-back-to-top></app-back-to-top>
+<!-- end  -->
+
+<footer>
+  <app-footer></app-footer>
+</footer>

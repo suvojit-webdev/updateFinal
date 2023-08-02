@@ -1,0 +1,83 @@
+  .signup-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .signup-left {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .signup-left img {
+    max-width: 100%;
+  }
+  
+  .signup-right {
+    flex: 1;
+    padding: 40px;
+  }
+  
+  .signup-right h2 {
+    margin-bottom: 20px;
+  }
+  
+  .signup-right form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .signup-right label {
+    margin-bottom: 8px;
+  }
+  
+  .signup-right input[type="text"],
+  .signup-right input[type="email"],
+  .signup-right input[type="password"] {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .signup-right input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .signup-right .signup-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .signup-right .privacy-terms {
+    margin-top: 15px;
+    font-size: 12px;
+  }
+
+  /* Custom styles for the mainHide button */
+.mainHide {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Optional: Increase the button size for better visibility */
+.mainHide .bi {
+  font-size: 1.25rem;
+}
+
+/* Optional: Change the button color based on visibility state */
+.mainHide .bi-eye-slash {
+  color: #dc3545; /* Red color when password is visible */
+}
+
+.mainHide .bi-eye {
+  color: #28a745; /* Green color when password is hidden */
+}

@@ -1,0 +1,97 @@
+<!-- <p>about-us works!</p> -->
+
+<section class="container mb-5">
+  <div class="banner">
+    <img
+      src="assets/img/avout us/img.png"
+      alt="Demo Image"
+      height="100%"
+      width="100%"
+    />
+  </div>
+</section>
+
+<section class="container">
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h1 class="mb-3"><b>Our Story</b></h1>
+      <h5>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores quis
+        beatae officia at numquam deleniti?
+      </h5>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa vitae
+        molestias minima, enim reprehenderit consequuntur nulla non impedit odit
+        laborum, sapiente nam eligendi placeat. Accusamus ex culpa quas, vero
+        sit sapiente voluptas ea quod nam adipisci saepe asperiores. Pariatur
+        unde, itaque illum quos tenetur temporibus rem repellat voluptatum.
+        Perferendis, error.
+      </p>
+    </div>
+    <div class="col-md-5">
+      <img src="assets/img/avout us/story3.png" />
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="container text-center">
+    <h2 class="mt-5 mb-4">Our Instructors</h2>
+    <div class="row">
+      <div
+        *ngFor="let instructor of instructors"
+        class="col mb-4"
+      >
+        <div class="card">
+          <img [src]="instructor.image" class="card-img-top" />
+          <div class="card-body">
+            <h5 class="card-title">{{ instructor.name }}</h5>
+            <p class="card-text">{{ instructor.bio }}</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="container mt-5">
+  <div class="row">
+    <div class="col mx-auto text-center">
+      <h3>We just keep growing</h3>
+      <p>
+        Our global community and our course catalog get bigger every day. Check
+        out our latest numbers as of July 2023.
+      </p>
+    </div>
+  </div>
+  <div class="row text-center mt-5">
+    <div class="col">
+      <h5>1000+</h5>
+      <p>Learners</p>
+    </div>
+    <div class="col">
+      <h5>9</h5>
+      <p>Instructors</p>
+    </div>
+    <div class="col">
+      <h5>50+</h5>
+      <p>Courses</p>
+    </div>
+    <div class="col">
+      <h5>5000+</h5>
+      <p>Course enrollments</p>
+    </div>
+    <div class="col">
+      <h5>5</h5>
+      <p>Languages</p>
+    </div>
+  </div>
+</section>

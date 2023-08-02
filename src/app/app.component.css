@@ -1,0 +1,96 @@
+  /* Smart bar container */
+  
+  
+  
+  .smart-bar {
+    background-color: #f0f0f0;
+    padding: 10px;
+    position: relative; /* To position the close button inside the container */
+  }
+  
+  /* Smart bar content wrapper */
+  .smart-bar__content {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Smart bar link */
+  .smart-bar__content a {
+    text-decoration: none;
+  }
+  
+  /* Smart bar title */
+  .smart-bar__title {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Smart bar subtitle */
+  .smart-bar__subtitle {
+    color: #666;
+  }
+
+  /* Close button */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #ccc;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Close button hover effect */
+  .close-button:hover {
+    background-color: #aaa;
+    color: white;
+  }
+
+
+
+.navbar-nav .dropdown-menu.show {
+    border-color: #000000;
+    border-width: 2px;
+}
+
+
+.cart {
+    display: flex;
+    align-items: center;
+}
+.cart i {
+    margin-right: 5px;
+}
+.cart span {
+    margin-left: 5px;
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px; 
+}
+
+.blog-card {
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  .blog-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .user-greeting {
+    background-color: #272829;
+    color: #ffffff;
+    padding: 10px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    display: inline-block;
+  }

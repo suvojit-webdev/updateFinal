@@ -1,0 +1,32 @@
+.card {
+    cursor: pointer;
+}
+
+/* banner for course jot and ppc */
+.image-container {
+    position: relative;
+  }
+  
+  .img-fluid {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+  
+  .text-over-image {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+.oneF{
+    border-radius: 20px;
+}
+.twoF{
+    border-radius: 20px;
+}
+
+
+

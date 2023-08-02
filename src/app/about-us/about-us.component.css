@@ -1,0 +1,15 @@
+  .banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .banner img {
+    border-radius: 20px;
+  }
+
+  .card {
+    width: 200px;
+    height: 350px;
+    left: 20px;
+  }

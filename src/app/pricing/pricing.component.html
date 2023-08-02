@@ -1,0 +1,175 @@
+<!-- <div class="container mt-5">
+  <div class="row">
+    Card 1
+    <div class="col-md-6">
+      <div class="card">
+        <img
+          src="https://uploads-ssl.webflow.com/63d97a19ab11fe3b259ee6a0/63d97a19ab11fe2b739ee6e0_pink-gem.svg"
+          class="card-img-top"
+          alt="pink gem"
+        />
+        <div class="card-body">
+          <h3 class="card-title">₹599 Monthly</h3>
+          <h4 class="card-subtitle mb-2 text-muted">50% off for launch</h4>
+          <ul class="list-unstyled">
+            <li>
+              <img
+                src="https://uploads-ssl.webflow.com/63d97a19ab11fe3b259ee6a0/63d97a19ab11fe6a5f9ee6e1_pink-tick.svg"
+                width="20"
+                alt="pink checkmark"
+              />All courses included
+            </li>
+            <li>
+              <img
+                src="https://uploads-ssl.webflow.com/63d97a19ab11fe3b259ee6a0/63d97a19ab11fe6a5f9ee6e1_pink-tick.svg"
+                width="20"
+                alt="pink checkmark"
+              />Your own AI coding tutor
+            </li>
+            <li>
+              <img
+                src="https://uploads-ssl.webflow.com/63d97a19ab11fe3b259ee6a0/63d97a19ab11fe6a5f9ee6e1_pink-tick.svg"
+                width="20"
+                alt="pink checkmark"
+              />Lifetime Access to this price
+            </li>
+          </ul>
+          <a href="https://app.codetutor.ai/" class="btn btn-primary"
+            >Enroll Now</a
+          >
+        </div>
+      </div>
+    </div>
+    Card 2
+    <div class="col-md-6">
+      <div class="card">
+        <img
+          src="https://uploads-ssl.webflow.com/63d97a19ab11fe3b259ee6a0/63d97a19ab11fe775c9ee6df_purple-gem.svg"
+          class="card-img-top"
+          alt="CodeTutor purple gem image"
+        />
+        <div class="card-body">
+          <h3 class="card-title">₹1999 Yearly</h3>
+          <h4 class="card-subtitle mb-2 text-muted">
+            50% off & two months free
+          </h4>
+          <ul class="list-unstyled">
+            <li>
+              <img
+                src="https://uploads-ssl.webflow.com/63d97a19ab11fe3b259ee6a0/63d97a19ab11fe17529ee6dd_purple-tick.svg"
+                width="20"
+                alt="Checkmark"
+              />All courses included
+            </li>
+            <li>
+              <img
+                src="https://uploads-ssl.webflow.com/63d97a19ab11fe3b259ee6a0/63d97a19ab11fe17529ee6dd_purple-tick.svg"
+                width="20"
+                alt="Checkmark"
+              />Your own AI coding tutor
+            </li>
+            <li>
+              <img
+                src="https://uploads-ssl.webflow.com/63d97a19ab11fe3b259ee6a0/63d97a19ab11fe17529ee6dd_purple-tick.svg"
+                width="20"
+                alt="Checkmark"
+              />Lifetime access to this price
+            </li>
+          </ul>
+          <a href="https://app.codetutor.ai/" class="btn btn-primary"
+            >Enroll Now</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- pricing-cards.component.html -->
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-6" *ngFor="let plan of plans">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">{{plan.price}}</h3>
+          <ul>
+            <li *ngFor="let feature of plan.features">
+              {{feature}}
+            </li>
+          </ul>
+          <button class="btn btn-primary">Enroll Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-6" *ngFor="let plan of plans">
+      <div class="card">
+        <img [src]="plan.image" class="card-img-top">
+        <div class="card-body">
+          <h3>{{ plan.name }}</h3>
+          <p>{{ plan.price | currency : "INR" }}</p>
+          <ul>
+            <li *ngFor="let feature of plan.features">
+              <img [src]="plan.tick" width="20" height="20" class="tick-img">
+              {{ feature }}
+            </li>
+          </ul>
+          <button class="btn btn-primary">Enroll Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-6" *ngFor="let plan of plans">
+      <div class="card">
+        <img [src]="plan.image" class="card-img-top">
+        <div class="card-body">
+          <h3 class="text-center">{{ plan.name }}</h3>
+          <p class="text-center">{{ plan.price | currency : "INR" }}</p>
+          <ul>
+            <li *ngFor="let feature of plan.features">
+              <img [src]="plan.tick" class="tick-img">
+              {{ feature }}
+            </li>
+          </ul>
+          <button class="btn btn-primary">Enroll Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6" *ngFor="let plan of plans">
+      <div class="card">
+        <img [src]="plan.image" class="card-img-top img-thumbnail mt-4" style="width: 80px; display: block; margin: 0 auto;">
+        <div class="card-body">
+          <h3 class="text-center"><b>{{ plan.name }}</b></h3>
+          <p class="text-center">{{plan.offer}}</p>
+          <h5 class="text-center">{{ plan.price | currency : "INR" }}</h5>
+
+          <ul class="feature">
+            <li *ngFor="let feature of plan.features">
+              <img [src]="plan.tick" class="tick-img " style="width: 20px;">
+              {{ feature }}
+            </li>
+          </ul>
+          
+          <button class="btn btn-primary d-block mx-auto" routerLink="/login">Enroll Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

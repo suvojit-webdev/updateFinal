@@ -1,0 +1,40 @@
+.allCourse {
+  padding-left: 3%;
+}
+
+/* all name nav */
+.headN {
+  margin-top: 40px;
+}
+.secheadN {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+
+/* Featured courses */
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+/* last card */
+
+.pagination .page-link {
+  cursor: pointer; 
+}
+
+.pagination .page-link:hover {
+  cursor: pointer;
+}
+
+.pagination .page-link:active {
+  cursor: pointer;
+}
+
+.pagination .disabled .page-link {
+  cursor: default;
+}
