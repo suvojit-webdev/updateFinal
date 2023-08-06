@@ -118,4 +118,37 @@ export class DesignScourseComponent implements AfterViewInit,OnInit{
     const endIndex = startIndex + this.pageSize;
     this.pagedAds = this.adsign.slice(startIndex, endIndex);
   }
+  
+  // sorting card
+  sortLowestToHighest() {
+    this.pagedAds.sort((a, b) => a.price - b.price);
+  }
+  sortHighestToLowest() {
+    this.pagedAds.sort((a, b) => b.price - a.price);
+  }
+
+  sortByPopularity() {
+    this.pagedAds.sort((a, b) => {
+      if (a.isBestSeller && !b.isBestSeller) {
+        return -1;
+      } else if (!a.isBestSeller && b.isBestSeller) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+  }
+
+  sortByNewestFirst() {
+    this.pagedAds.sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      return dateB.getTime() - dateA.getTime();
+    });
+  }
+  
+
+
+
+
 }

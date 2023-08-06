@@ -25,8 +25,19 @@ import { InterceptorService } from './allServiceFiles/interceptor.service';
 import { BackToTopComponent } from './back-to-top/back-to-top.component';
 import { AboutUSComponent } from './about-us/about-us.component'; 
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+import { ToastrModule } from 'ngx-toastr';
 
+import { PaymentPageComponent } from './payment-page/payment-page.component';
+
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideToastr } from 'ngx-toastr';
+
+import { NgOptimizedImage } from '@angular/common';
+
+// import { BigAmountPipe } from './pipe not use/big-amount.pipe';
+// import { DiscountPipe } from './pipe not use/discount.pipe';
 
 
 @NgModule({
@@ -48,6 +59,10 @@ import { AboutUSComponent } from './about-us/about-us.component';
     ProfilePageComponent,
     BackToTopComponent,
     AboutUSComponent,
+    // PaymentPageComponent,
+    // BigAmountPipe,
+    // DiscountPipe,
+    
   ],
   imports: [
     BrowserModule,
@@ -55,16 +70,22 @@ import { AboutUSComponent } from './about-us/about-us.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+    }),
+    NgOptimizedImage,
   ],
   providers: [
+    
     StoreService,
     {
-      provide:HTTP_INTERCEPTORS,
-      useClass:InterceptorService,
-      multi:true
-    }
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true,
+    },
+    provideAnimations(),
+    provideToastr(),
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -94,3 +94,14 @@
     border-bottom-right-radius: 100px;
     display: inline-block;
   }
+
+  .profile{
+    /* background-color: aqua; */
+    left:auto !important; 
+    right:0;
+  }
+
+  .transparent-button {
+    background-color: transparent;
+    border: none; /* Optional: Remove border if you don't want any */
+}

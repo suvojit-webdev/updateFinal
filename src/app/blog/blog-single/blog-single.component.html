@@ -1,9 +1,92 @@
-<p>blog-single works!</p>
+<!-- <p>blog-single works!</p> -->
 
-<div class="container">
+<!-- <div class="container">
     <img style="align-items: center;" src="assets/img/blogimg/blogoi.png" alt=""> <br>
     <p>With CodeTutor you'll start by learning the fundamentals through interactive courses that combine short video lessons with hands-on coding challenges. The courses cover topics like HTML, CSS, JavaScript, Python and more - everything you need to build modern websites and applications. A key advantage of CodeTutor is its personalized approach. Their intelligent system evaluates your progress and customizes each lesson to fill in your knowledge gaps. If you're struggling with a concept, it will provide extra exercises and explanations until you've mastered it.
         Their team of expert instructors is available for one-on-one support whenever you need it. You can schedule video chat sessions to get live help and feedback. This human touch ensures you're supported each step of the way.The end goal of CodeTutor is real-world job skills. Each course teaches practical techniques you'll use daily as a professional developer. And they'll help you build an impressive portfolio to show employers by the end of the program.
         In today's booming tech industry, coding skills are highly valued. With the right training from CodeTutor, you can launch a new, lucrative career in just a few short months. Their personalized, mentor-led approach makes the challenging journey of learning to code achievable for anyone motivated to put in the work.
     </p>
+</div> -->
+
+
+<!-- <div class="container blog-content">
+    <div class="blog-image">
+      <img src="assets/img/blogimg/blogoi.png" alt="">
+    </div>
+    <div class="blog-text">
+      <p>With CodeTutor you'll start by learning the fundamentals through interactive courses that combine short video lessons with hands-on coding challenges. The courses cover topics like HTML, CSS, JavaScript, Python and more - everything you need to build modern websites and applications. A key advantage of CodeTutor is its personalized approach. Their intelligent system evaluates your progress and customizes each lesson to fill in your knowledge gaps. If you're struggling with a concept, it will provide extra exercises and explanations until you've mastered it.
+        Their team of expert instructors is available for one-on-one support whenever you need it. You can schedule video chat sessions to get live help and feedback. This human touch ensures you're supported each step of the way.The end goal of CodeTutor is real-world job skills. Each course teaches practical techniques you'll use daily as a professional developer. And they'll help you build an impressive portfolio to show employers by the end of the program.
+        In today's booming tech industry, coding skills are highly valued. With the right training from CodeTutor, you can launch a new, lucrative career in just a few short months. Their personalized, mentor-led approach makes the challenging journey of learning to code achievable for anyone motivated to put in the work.
+      </p>
+    </div>
+  </div> -->
+
+<div class="container blog-content">
+    <!-- Existing code for blog image and text -->
+    <div class="blog-image">
+        <img src="assets/img/blogimg/blogoi.png" alt="">
+        <!-- <p class="image-caption">By Suvojit Modak on 8 Aug 2023</p> -->
+        <p class="image-caption">By Suvojit Modak on {{ date }}</p>
+
+
+        <button class="btn btn-primary" (click)="incrementLikes()">
+            <i class="fa-solid fa-heart"></i>
+            <span style="margin-left: 5px;">{{ likes }}</span>
+        </button>
+
+    </div>
+    <div class="blog-text">
+        <p style="text-align: justify">
+            With CodeTutor you'll start by learning the fundamentals through interactive courses that combine short video
+            lessons with hands-on coding challenges. The courses cover topics like HTML, CSS, JavaScript, Python and
+            more - everything you need to build modern websites and applications. A key advantage of CodeTutor is its
+            personalized approach. Their intelligent system evaluates your progress and customizes each lesson to fill
+            in your knowledge gaps. If you're struggling with a concept, it will provide extra exercises and
+            explanations until you've mastered it.
+            Their team of expert instructors is available for one-on-one support whenever you need it. You can schedule
+            video chat sessions to get live help and feedback. This human touch ensures you're supported each step of
+            the way.The end goal of CodeTutor is real-world job skills. Each course teaches practical techniques you'll
+            use daily as a professional developer. And they'll help you build an impressive portfolio to show employers
+            by the end of the program.
+            In today's booming tech industry, coding skills are highly valued. With the right training from CodeTutor,
+            you can launch a new, lucrative career in just a few short months. Their personalized, mentor-led approach
+            makes the challenging journey of learning to code achievable for anyone motivated to put in the work.
+        </p>
+    </div>
 </div>
+
+
+
+<div class="container">
+    <!-- Comments Section -->
+    <div class="comments-section">
+        <h3>Comments</h3>
+        <!-- Dummy Comment -->
+        <div class="comment">
+            <div class="user">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos possimus porro
+                earum dolor sint fuga laborum velit laudantium distinctio quos sunt veritatis unde inventore, autem ad
+                tenetur voluptatibus mollitia vel!" - <b>trollguy55</b>
+            </div>
+        </div>
+    </div>
+<hr>
+
+
+    <!-- Blog Comments Section -->
+    <div class="container">
+        <div class="blog-comments">
+            <h2>Add Comment</h2>
+            <div class="comment-form">
+                <input type="text" [(ngModel)]="newComment.author" placeholder="Your Name">
+                <textarea [(ngModel)]="newComment.text" placeholder="Your Comment"></textarea>
+                <button class="btn btn-primary" (click)="submitComment()">Submit</button>
+            </div>
+            <div class="comments-list">
+                <div class="comment" *ngFor="let comment of comments">
+                    <h4>{{ comment.author }}</h4>
+                    <p>{{ comment.text }}</p>
+                    <p class="comment-date">{{ comment.date | date }}</p>
+                </div>
+            </div>
+        </div>
+    </div>

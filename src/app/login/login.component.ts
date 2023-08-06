@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataService } from '../allServiceFiles/data.service';
 import { StoreService } from '../allServiceFiles/store.service';
 import { Router } from '@angular/router';
+
+import { ToastService } from '../allServiceFiles/toast.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,13 +21,14 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private ser: DataService,
     private store: StoreService,
-    private route: Router
+    private route: Router,
+    private toaster: ToastService,
   ) {}
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required]],
-      password: ['', [Validators.required]],
+      email: ['', [Validators.required,Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)]],
+      password: ['', [Validators.required,Validators.pattern(/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@#*&])[A-Za-z\d@#*&]{8,}$/)]],
     });
   }
 
@@ -49,7 +53,8 @@ export class LoginComponent implements OnInit {
           console.log('Response of sign in', res);
           let loginRes = res.data;
           if (res.status == 200) {
-            alert('Login Successful ✅');
+            // alert('Login Successful ✅');
+            this.toaster.ShowSuccess('Login Successfully');
             this.route.navigate(['/profile']);
             this.store.setData(
               loginRes.first_name,
@@ -58,7 +63,9 @@ export class LoginComponent implements OnInit {
               res.token
             );
           } else {
-            alert('Invalid Input ❌');
+            // alert('Invalid Input ❌');
+            this.toaster.ShowErr('Invalid Input');
+
           }
         },
 

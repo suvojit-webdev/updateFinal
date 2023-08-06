@@ -211,18 +211,70 @@
   </div> -->
 
 
+
+<!--  -->
+<div class="dropdown container mb-2">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-filter"></i> Sort By</button>
+  <div class="dropdown-menu" aria-labelledby="sortDropdown" style="cursor: pointer;">
+    <a class="dropdown-item" (click)="sortByPopularity()">Popularity</a>
+    <a class="dropdown-item" (click)="sortHighestToLowest()">High to Low</a>
+    <a class="dropdown-item" (click)="sortLowestToHighest()">Low to High</a>
+    <a class="dropdown-item" (click)="sortByNewestFirst()">Newest First</a>
+  </div>
+</div>
+<!--  -->
+
+
+
+
+
+
 <!-- final pagination of my last card -->
-  <div class="container">
+  <!-- <div class="container">
     <div class="row">
       <div class="col-md-4 mb-3" *ngFor="let ad of pagedAds">
         <div class="card">
+          <img [src]="ad.image" class="card-img-top mt-3" style="height: 50%; width: 60%; margin: 0 auto;"/>
           <div class="card-body">
             <h5 class="card-title">{{ad.title}}</h5>
             <p class="card-text">{{ad.text}}</p>
+            <h5 class="card-text">{{ad.price}}</h5>
+
+            <h5 class="card-text">{{ad.price}}</h5>
+
           </div>
         </div>
       </div>
+    </div> -->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let ad of pagedAds">
+      <div class="card">
+        <img [src]="ad.image" class="card-img-top mt-3" style="height: 50%; width: 60%; margin: 0 auto;"/>
+        <div class="card-body">
+          <h5 class="card-title">{{ad.title}}</h5>
+          <p class="card-text">{{ad.text}}</p>
+          <h5 class="card-text"><s>{{ad.oprice | currency:'INR':'symbol':'1.2-2'}}</s> {{(ad.percent * 0.01) | percent:'1.0-2'}}</h5>
+          <h5 class="card-text">{{ad.price | currency:'INR':'symbol':'1.2-2'}}
+            <span *ngIf="ad.isBestSeller" class="badge text-bg-warning">Best Seller</span>
+          </h5>
+        </div>
+      </div>
     </div>
+  </div>
+
+
+
+  
+    
+    
+
+
+
+
+
     <ul class="pagination justify-content-center">
       <li class="page-item" [class.disabled]="currentPage === 1">
         <a class="page-link" (click)="prevPage()" tabindex="-1">Previous</a>
@@ -234,6 +286,7 @@
         <a class="page-link" (click)="nextPage()">Next</a>
       </li>
     </ul>
+
   </div>
   
 

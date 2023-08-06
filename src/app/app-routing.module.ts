@@ -7,13 +7,15 @@ import { SignupComponent } from './signup/signup.component';
 import { PnfComponent } from './pnf/pnf.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { BlogComponent } from './blog/blog.component';
-import { RewardsComponent } from './rewards/rewards.component';
+// import { RewardsComponent } from './rewards/rewards.component';
 import { BlogSingleComponent } from './blog/blog-single/blog-single.component';
 import { FaqsComponent } from './faqs/faqs.component';
 import { DesignScourseComponent } from './design-scourse/design-scourse.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { AboutUSComponent } from './about-us/about-us.component';
 import { authGuard } from './authentication/auth.guard';
+import { CartComponent } from './cart/cart.component';
+// import { PaymentPageComponent } from './payment-page/payment-page.component';
 
 const routes: Routes = [
 
@@ -22,28 +24,42 @@ const routes: Routes = [
 
   {path:'home', component:HomeComponent},
 
-  {path:'courses', component:CoursesComponent},
+  {path:'home/courses', component:CoursesComponent},
 
   {path:'login', component:LoginComponent},
   {path:'signup', component:SignupComponent},
 
-  {path:'pricing', component:PricingComponent},
+  {path:'home/pricing', component:PricingComponent, canActivate:[authGuard]},
 
-  {path:'blog', component:BlogComponent},
-  {path:'blogSingle', component:BlogSingleComponent},
-
-
-  {path:'design', component:DesignScourseComponent},
+  {path:'home/blog', component:BlogComponent},
+  {path:'home/blog/blogSingle', component:BlogSingleComponent},
 
 
+  {path:'home/design', component:DesignScourseComponent},
 
 
-  {path:'faqs', component:FaqsComponent},
+
+
+  {path:'home/faqs', component:FaqsComponent},
   // {path:'rewards', component:RewardsComponent},
 
   {path:'profile', component:ProfilePageComponent, canActivate:[authGuard]},
 
-  {path:'about', component:AboutUSComponent},
+  {path:'home/about', component:AboutUSComponent},
+
+
+  {path:'home/cart', component:CartComponent},
+
+
+  // {path:'home/payment', component:PaymentPageComponent,},
+
+
+  // lazy loading path
+  { path: 'home/payment', loadChildren: () => import('./lazyFiles/payment/payment.module').then(m => m.PaymentModule) },
+
+
+
+
 
 
 

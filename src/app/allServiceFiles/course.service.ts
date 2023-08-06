@@ -171,76 +171,118 @@ export class CourseService {
   aDesign() {
     return [
       {
-        title: 'Card 1',
-        text: 'This is the content of Card 1' 
+        title:  'The Ultimate Drawing Course - Beginner to Advanced',
+        text:   'Learn the #1 most important building block of all art, Drawing. This course will teach you how to draw like...',
+        image:  'assets/img/courses/small card/card1.jpg',
+        oprice: 1699,
+        price:  679,
+        percent: 40,
+        isBestSeller: true,
+        date: '2023-08-05', 
       },
       {
-        title: 'Card 2',
-        text: 'This is the content of Card 2'
+        title: 'Character Art School: Complete Character Drawing Course',
+        text: 'Learn the core fundamentals of Character Drawing, so you can create professional art and illustrations.',
+        image:  'assets/img/courses/small card/card2.jpg',
+        oprice: 1999,
+        price: 799,
+        percent: 40,
+        date: '2023-05-05',  
       },
       {
-        title: 'Card 3',
-        text: 'This is the content of Card 3'
+        title: 'Complete Blender Creator: Learn 3D Modelling for Beginners',
+        text: 'Use Blender to Create Beautiful 3D models for Video Games, 3D Printing & More. Beginners Level Course',
+        image:  'assets/img/courses/small card/card3.jpg',
+        oprice: 1699,
+        price:  679,
+        percent: 40,
+        isBestSeller: true,
+        date: '2023-07-05',  
       },
       {
-        title: 'Card 4',
-        text: 'This is the content of Card 4'
+        title: 'Graphic Design Masterclass - Learn GREAT Design',
+        text: 'The Ultimate Graphic Design Course Which Covers Photoshop, Illustrator, InDesign,Design Theory...',
+        image:  'assets/img/courses/small card/card4.jpg',
+        oprice: 1999,
+        price: 799,
+        percent: 40,
+        date: '2023-07-06', 
       },
       {
-        title: 'Card 5',
-        text: 'This is the content of Card 5'
+        title: 'User Experience Design Essentials - Adobe XD UI UX Design',
+        text: 'Use XD to get a job in UI Design, User Interface, User Experience design, UX design & Web Design',
+        image:  'assets/img/courses/small card/card6.jpg',
+        oprice: 1699,
+        price:  679,
+        percent: 40,
+        isBestSeller: true,
+        date: '2023-04-10', 
       },
       {
-        title: 'Card 6',
-        text: 'This is the content of Card 6'
+        title: 'Adobe After Effects: Complete Course from Novice to Expert',
+        text: 'Learn Adobe After Effects CC: Master Motion Graphics, VFX Visual Effects & VFX Compositing...',
+        image:  'assets/img/courses/small card/card7.jpg',
+        oprice: 1999,
+        price: 799,
+        percent: 40,
+        date: '2023-08-06',  
       },
       {
-        title: 'Card 7',
-        text: 'This is the content of Card 7'
+        title: 'Wordpress for Beginners - Master Wordpress Quickly',
+        text: 'In 2023, build a beautiful responsive Wordpress site that looks great on all devices. No experience...',
+        image:  'assets/img/courses/small card/card8.jpg',
+        oprice: 2199,
+        price: 879,
+        percent: 40,
+        date: '2023-07-10',
       },
       {
-        title: 'Card 8',
-        text: 'This is the content of Card 8'
+        title: 'Web Design for Beginners: Real World Coding in HTML & CSS',
+        text: 'Launch a career as a web designer by learning HTML5, CSS3, responsive design, Sass and more!',
+        image:  'assets/img/courses/small card/card9.jpg',
+        oprice: 2199,
+        price: 879,
+        percent: 40,
+        isBestSeller: true,
+        date: '2023-08-05',  
       },
       {
-        title: 'Card 9',
-        text: 'This is the content of Card 9'
+        title: 'Complete Web & Mobile Designer in 2023: UI/UX, Figma, +more',
+        text: 'Become a Designer in 2023! Master Mobile and Web Design, User Interface + User Experience (UI/UX...',
+        image:  'assets/img/courses/small card/card10.jpg',
+        oprice: 1699,
+        price:  679,
+        percent: 40,
+        date: '2023-08-05',
       },
       {
-        title: 'Card 10',
-        text: 'This is the content of Card 10'
+        title: 'Adobe Photoshop CC: A Beginner to Advanced Photoshop Course',
+        text: 'You can learn Adobe Photoshop CC. Graphic Design, Photo Editing & Retouching, Learn it all with this...',
+        image:  'assets/img/courses/small card/card11.jpg',
+        oprice: 1999,
+        price: 799,
+        percent: 40,
+        isBestSeller: true,
+        date: '2023-07-05',
       },
       {
-        title: 'Card 11',
-        text: 'This is the content of Card 11'
+        title: 'CSS - The Complete Guide 2023 (incl. Flexbox, Grid & Sass)',
+        text: 'Learn CSS for the first time or brush up your CSS skills and dive in even deeper. EVERY web developer has...',
+        image:  'assets/img/courses/small card/card12.jpg',
+        oprice: 1699,
+        price:  679,
+        percent: 40,
+        date: '2023-08-05',
       },
       {
-        title: 'Card 12',
-        text: 'This is the content of Card 12'
-      },
-      {
-        title: 'Card 13',
-        text: 'This is the content of Card 13'
-      },
-      {
-        title: 'Card 14',
-        text: 'This is the content of Card 14'
-      },
-      {
-        title: 'Card 15',
-        text: 'This is the content of Card 15'
-      },
-      {
-        title: 'Card 16',
-        text: 'This is the content of Card 16'
-      },
-      {
-        title: 'Card 17',
-        text: 'This is the content of Card 17'
-      },
-      {
-        title: 'Card 18',
-        text: 'This is the content of Card 18'
+        title: 'The Complete Graphic Design Theory for Beginners Course',
+        text: 'Learn Graphic Design Theory and the Basic Principles of Color Theory, Typography, Branding, Logo Design...',
+        image:  'assets/img/courses/small card/card13.jpg',
+        oprice: 1999,
+        price: 799,
+        percent: 40,
+        isBestSeller: true,
+        date: '2023-06-6',
       },
     ];
   }

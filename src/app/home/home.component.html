@@ -1,18 +1,13 @@
 <main>
   <div class="container mt-4 banner-container">
-    <img
-      src="assets/img/banner2.jpg"
-      alt="Overlay Image"
-      class="overlay-image"
-      width="1300"
-    />
+    <img src="assets/img/banner2.jpg" alt="Overlay Image" class="overlay-image" width="1300" />
     <div class="overlay-text">
       <h1 class="custom-h1">Sale on now</h1>
       <p class="custom-p">
         We have special savings for logged-in visitors. <br />
         See how much you can save.
       </p>
-      <button class="custom-button" routerLink="/courses">Learn More</button>
+      <button class="custom-button" routerLink="/home/courses">Learn More</button>
     </div>
   </div>
 
@@ -34,6 +29,7 @@
         {{ option.title }}
       </button>
     </div>
+
     <!-- this comment is not working & css name-->
     <!-- <div class="card small-card" *ngIf="selectedOption">
       <img [src]="selectedOption.imageSrc" alt="Image"/>
@@ -45,17 +41,17 @@
     </div> -->
 
     <div class="card" style="width: 13rem;" *ngIf="selectedOption">
-      <img [src]="selectedOption.imageSrc" alt="Image"/>
+      <img [src]="selectedOption.imageSrc" alt="Image" />
       <div class="card-body text-center">
         <h5 class="card-title">{{ selectedOption.title }}</h5>
         <p class="card-text">{{ selectedOption.content }}</p>
-        <a (click)="addToCart()" class="btn btn-primary">Add to Cart</a>
+        <a (click)="addToCart()" class="btn btn-primary" routerLink="/home/cart">Add to Cart</a>
       </div>
     </div>
   </div>
 
   <!-- Off-canvas sidebar -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" [class.show]="selectedOption">
+  <!-- <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" [class.show]="selectedOption">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title">{{ selectedOption?.title }}</h5>
       <button type="button" class="btn-close text-reset" (click)="showCard(null)"></button>
@@ -64,7 +60,7 @@
       <p *ngIf="selectedOption">{{ selectedOption.content }}</p>
       <p *ngIf="selectedOption">Price: {{ selectedOption.price }}</p>
     </div>
-  </div>
+  </div> -->
 
   <!-- error end -->
 
@@ -90,8 +86,8 @@
     </div>
   </div>
 
-  
-  
+
+
 
 
 
@@ -105,7 +101,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 mb-3" *ngFor="let testimonial of testimonials">
-        <div class="card testimonial-card d-flex flex-column h-100">
+        <div class="card testimonial-card d-flex flex-column h-100 newd">
           <img [src]="testimonial.image" class="card-img-top" />
           <div class="card-body d-flex flex-column">
             <h5>{{ testimonial.text }}</h5>
@@ -117,6 +113,7 @@
       </div>
     </div>
   </div>
+
 
   <!-- <section class="container mb-5 mt-4 text-center">
     <div>
@@ -138,22 +135,24 @@
 
   <section class="container mb-5 mt-4 text-center">
     <div>
-      <b><h1 class="mb-4">Top Categories</h1></b>
+      <b>
+        <h1 class="mb-4">Top Categories</h1>
+      </b>
       <div class="row">
         <div class="col-md-3" *ngFor="let category of categories">
           <div class="card mb-4">
             <img [src]="category.image" class="card-img-top category-image mt-4">
             <div class="card-body">
               <h5 class="card-title">{{ category.title }}</h5>
-              <a class="btn btn-primary" routerLink="/design">Read More</a>
+              <a class="btn btn-primary" routerLink="/home/design">Read More</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  
-  
+
+
 
 
   <section>
@@ -161,11 +160,7 @@
       <h2 class="mt-4">Our students are placed at</h2>
       <div class="row">
         <div class="col-md-4 mb-3" *ngFor="let company of topCompanies">
-          <img
-            [src]="company.logo"
-            class="img-fluid"
-            style="max-width: 200px"
-          />
+          <img [src]="company.logo" class="img-fluid" style="max-width: 200px" />
         </div>
       </div>
       <button class="btn btn-primary">Download Report</button>
@@ -205,53 +200,56 @@
       <p class="ctoo">Get a free counselling session from our experts</p>
       <div class="row">
         <div class="col-md-5">
-          <img src="assets/img/contact/5124556.jpg" alt="Contact Us" class="img-fluid" height="50%" width="100%" style="mix-blend-mode: multiply"/>
+          <img src="assets/img/contact/5124556.jpg" alt="Contact Us" class="img-fluid" height="50%" width="100%"
+            style="mix-blend-mode: multiply" />
         </div>
         <div class="col-md-7 mt-5">
           <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
               <label for="name"><b>Full Name</b></label>
-              <input type="text" class="form-control" id="name" formControlName="fullName" placeholder="Enter Full Name *"/>
+              <input type="text" class="form-control" id="name" formControlName="fullName"
+                placeholder="Enter Full Name *" />
               <ng-container *ngIf="contactForm.get('fullName')?.touched">
-                <ng-container
-                  *ngIf="contactForm.get('fullName')?.hasError('required')"
-                >
+                <ng-container *ngIf="contactForm.get('fullName')?.hasError('required')">
                   <p style="color: red">*Required</p>
                 </ng-container>
+                <div *ngIf=" contactForm.get('fullName')?.touched && contactForm.get('fullName')?.hasError('pattern')"
+                  class="text-danger">
+                  First name must start with a capital letter and contain only alphabets
+                </div>
+                <div *ngIf=" contactForm.get('fullName')?.touched && contactForm.get('fullName')?.hasError('minlength')"
+                  class="text-danger">
+                  First name must have a minimum length of 3
+                </div>
               </ng-container>
             </div>
             <div class="form-group">
               <label for="email"><b>Email</b></label>
-              <input
-                type="email"
-                class="form-control"
-                id="email"
-                formControlName="email"
-                placeholder="Enter Email Address *"
-              />
+              <input type="email" class="form-control" id="email" formControlName="email"
+                placeholder="Enter Email Address *" />
               <ng-container *ngIf="contactForm.get('email')?.touched">
-                <ng-container
-                  *ngIf="contactForm.get('email')?.hasError('required')"
-                >
+                <ng-container *ngIf="contactForm.get('email')?.hasError('required')">
                   <p style="color: red">*Required</p>
                 </ng-container>
+
+                <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.hasError('pattern')" class="text-danger">
+                  Invalid email format*(abc@example.com)
+                </div>
+
               </ng-container>
             </div>
+
             <div class="form-group">
               <label for="phone"><b>Contact Number</b></label>
-              <input
-                type="phone"
-                class="form-control"
-                id="phone"
-                formControlName="phone"
-                placeholder="Contact Number *"
-              />
+              <input type="number" class="form-control" id="phone" formControlName="phone" placeholder="Contact Number *" />
               <ng-container *ngIf="contactForm.get('phone')?.touched">
-                <ng-container
-                  *ngIf="contactForm.get('phone')?.hasError('required')"
-                >
+                <ng-container *ngIf="contactForm.get('phone')?.hasError('required')">
                   <p style="color: red">*Required</p>
                 </ng-container>
+
+                <div *ngIf=" contactForm.get('phone')?.touched && contactForm.get('phone')?.hasError('pattern')"class="text-danger">
+                  Phone number must start with 9 and contain only digits
+                </div>
               </ng-container>
             </div>
 
@@ -263,9 +261,7 @@
                 <option *ngFor="let loc of locations">{{ loc }}</option>
               </select>
               <ng-container *ngIf="contactForm.get('location')?.touched">
-                <ng-container
-                  *ngIf="contactForm.get('location')?.hasError('required')"
-                >
+                <ng-container *ngIf="contactForm.get('location')?.hasError('required')">
                   <p style="color: red">*Required</p>
                 </ng-container>
               </ng-container>
@@ -283,14 +279,19 @@
 
   <h1 class="text-center mb-5">Upcoming Events</h1>
   <section>
-      <div class="owl-carousel owl-theme">
-        <div class="item" *ngFor="let event of events">
-          <img [src]="event.image" [alt]="event.title" />
-          <h4>{{ event.title }}</h4>
-          <p><b>Starts on</b></p>
-          <h5>{{ event.date }}</h5>
-        </div>
+    <div class="owl-carousel owl-theme">
+      <div class="item" *ngFor="let event of events">
+        <!-- <img [src]="event.image" [alt]="event.title" /> -->
+
+        <!-- <img ="event.image" [alt]="event.title" /> -->
+
+        <img [ngSrc]="event.image" [alt]="event.title" height="180" width="100" priority>
+
+        <h4>{{ event.title }}</h4>
+        <p><b>Starts on</b></p>
+        <h5>{{ event.date }}</h5>
       </div>
+    </div>
   </section>
 
 </main>

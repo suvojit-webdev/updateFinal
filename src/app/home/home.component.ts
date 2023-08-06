@@ -145,9 +145,9 @@ events: any[];
   }
   initForm() {
     this.contactForm = this.formBuilder.group({
-      fullName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      phone: ['', Validators.required],
+      fullName: ['', [Validators.required,Validators.pattern(/^[A-Z][a-zA-Z]*$/), Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email,Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)]],
+      phone: ['', [Validators.required,Validators.pattern(/^9\d{9}$/)]],
       location: ['', Validators.required],
     });
   }

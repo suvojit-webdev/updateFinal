@@ -2,23 +2,28 @@
   <h1 class="text-center"><b>Blog</b></h1><br>
 
   <div class="row">
-    <!-- Left Side: Categories, Recent Posts, Keyword Search, and Tag Cloud -->
+    <!-- Left Side: Categories, Recent Posts, Keyword Search -->
     <div class="col-md-4">
+
       <!-- Categories -->
-      <div class="mb-4">
+      <!-- <div class="mb-4">
         <h3><b>Categories</b></h3>
         <ul class="list-group">
           <li *ngFor="let category of categories" class="list-group-item">{{ category }}</li>
         </ul>
-      </div>
+      </div> -->
 
       <!-- Recent Posts -->
       <div class="mb-4">
         <h3><b>Recent Posts</b></h3>
         <ul class="list-group">
-          <li *ngFor="let post of recentPosts" class="list-group-item">{{ post }}</li>
+          <li *ngFor="let post of blogPosts" class="list-group-item">
+            <h5>{{ post.title }}</h5>
+            <p>{{ post.content | slice:0:50 }}{{ post.content.length > 50 ? '...' : '' }}</p>
+          </li>
         </ul>
       </div>
+
 
       <!-- Keyword Search -->
       <div class="mb-4">
@@ -30,54 +35,26 @@
           </div>
         </div>
       </div>
-
-      <!-- Tag Cloud (Sample data, replace with actual data if available) -->
-      <div>
-        <h3><b>Tag Cloud</b></h3>
-        <div class="tag-cloud">
-          <span class="tag">Tag 1</span>
-          <span class="tag">Tag 2</span>
-          <span class="tag">Tag 3</span>
-          <!-- Add more tags as needed -->
-        </div>
-      </div>
     </div>
 
     <!-- Right Side: Images and Blog Cards -->
     <div class="col-md-8">
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card blog-card">
-            <img style="align-items: center;" src="assets/img/blogimg/blogoi.png">
+      <div class="row d-flex flex-wrap align-items-stretch">
+        <div class="col-md-4 mb-4" *ngFor="let post of blogPosts">
+          <div class="card blog-card" style="height: 100%;">
+            <!-- <img style="align-items: center;" src="assets/img/blogimg/blogoi.png"> -->
+            <img style="align-items: center;" [src]="post.image">
             <div class="card-body">
-              <h5 class="card-title">How CodeTutor can transform your coding skills</h5>
-              <p class="card-text">Learning to code can seem daunting, but with the right guidance it can be an achievable and rewarding journey. That's where CodeTutor comes in. CodeTutor is an online learning platform designed to take beginning coders from no knowledge to job-ready in just months. </p>
-              <a routerLink="/blogSingle"  class="btn btn-primary">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card blog-card">
-            <img style="align-items: center;" src="assets/img/blogimg/blogoi2.png">
-            <div class="card-body">
-              <h5 class="card-title">Praesent tempus quam vitae urna posuere fringilla. Sed tincidunt, velit id aliquet varius.</h5>
-              <p class="card-text">Learning to code can seem daunting, but with the right guidance it can be an achievable and rewarding journey. That's where CodeTutor comes in. CodeTutor is an online learning platform designed to take beginning coders from no knowledge to job-ready in just months. </p>
-              <a routerLink="/blogSingle"  class="btn btn-primary">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card blog-card">
-            <img style="align-items: center;" src="assets/img/blogimg/blogoi.png">
-            <div class="card-body">
-              <h5 class="card-title">Nulla feugiat mauris vel magna scelerisque, quis eleifend ex fringilla.</h5>
-              <p class="card-text">Learning to code can seem daunting, but with the right guidance it can be an achievable and rewarding journey. That's where CodeTutor comes in. CodeTutor is an online learning platform designed to take beginning coders from no knowledge to job-ready in just months. </p>
-              <a routerLink="/blogSingle"  class="btn btn-primary">Read More</a>
+              <h5 class="card-title">{{ post.title }}</h5><span class="badge rounded-pill text-bg-secondary">{{ post.date }}</span>
+              <p class="card-text">{{ post.content }}</p>
+              <a routerLink="/home/blog/blogSingle" class="btn btn-primary" [queryParams]="{ date: post.date }">Read More</a>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    
   </div>
 
   <!-- Angular Loader -->
@@ -87,11 +64,5 @@
         <span class="visually-hidden">Loading...</span>
       </div>
     </div>
-    <!-- **else then router outlet use -->
   </div>
 </div>
-
-<!-- here make 2 ngif and loader use -->
-  
-
-<router-outlet></router-outlet>

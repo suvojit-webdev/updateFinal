@@ -53,17 +53,23 @@
     <div class="collapse navbar-collapse" id="navbarNav" role="button">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/courses">Courses</a>
+          <a class="nav-link" routerLink="/home/courses">Courses</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/pricing">Pricing</a>
+          <a class="nav-link" routerLink="/home/pricing">Pricing</a>
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="/home/payment">Payment</a>
+        </li> -->
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="/home/payment">Lazzy Payment</a>
+        </li> -->
 
-        <ng-container *ngIf="loggedin()">
+        <!-- <ng-container *ngIf="loggedin()">
           <li class="nav-item">
             <a class="nav-link" routerLink="/profile">Profile Page</a>
           </li>
-        </ng-container>
+        </ng-container> -->
 
         <li class="nav-item dropdown">
           <a
@@ -75,15 +81,11 @@
             >Resources</a
           >
           <ul class="dropdown-menu" aria-labelledby="resourcesDropdown">
-            <li><a class="dropdown-item" routerLink="/about">About US</a></li>
-            <li><a class="dropdown-item" routerLink="/blog">Blog</a></li>
             <li>
-              <a class="dropdown-item" href="#"> <s>Career Advice</s></a>
+              <a class="dropdown-item" routerLink="/home/about">About US</a>
             </li>
-            <li><a class="dropdown-item" routerLink="/faqs">FAQs</a></li>
-            <li>
-              <a class="dropdown-item" href="#"> <s>Product Updates</s></a>
-            </li>
+            <li><a class="dropdown-item" routerLink="/home/blog">Blog</a></li>
+            <li><a class="dropdown-item" routerLink="/home/faqs">FAQs</a></li>
             <!-- <li><a class="dropdown-item" routerLink="/rewards">Rewards</a></li> -->
           </ul>
         </li>
@@ -107,8 +109,7 @@
           </ul>
         </li> -->
 
-
-        <li>
+        <!-- <li>
           <button type="button" class="btn btn-primary" routerLink="/login" *ngIf="!loggedin()"> Log in </button> &nbsp;
           <button type="button" class="btn btn-secondary" routerLink="/signup" *ngIf="!loggedin()"> Sign up </button>
 
@@ -126,19 +127,57 @@
               </a>
             </li>
           </ul>
-        </li>
+        </li> -->
+
+        <ng-container *ngIf="!loggedin()">
+          <button type="button" class="btn btn-primary" routerLink="/login">Log in</button>&nbsp;
+          <button type="button" class="btn btn-secondary" routerLink="/signup">Sign up</button>&nbsp;
+        </ng-container>
+
+        <ng-container *ngIf="loggedin()">
+          <div class="dropdown">
+            <button class="dropdown-toggle transparent-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="assets/img/navprofile.png" alt="" />
+            </button>
+
+            <ul class="dropdown-menu profile">
+              <li>
+                <a class="dropdown-item" routerLink="/profile"><i class="fa-solid fa-user"></i>  My Profile</a>
+              </li>
+              <!-- <hr>
+              <li>
+                <a class="dropdown-item" routerLink="/home"><i class="fa-solid fa-book"></i>  My Learning</a>
+              </li> -->
+              <hr>
+              <li>
+                <a class="dropdown-item" (click)="loggingOut()"><i class="fa-solid fa-right-from-bracket"></i>  Logout</a>
+              </li>
+            </ul>
+          </div>
+        </ng-container>
 
 
+        <!-- add to cart in navbar -->
+        <!-- <li class="cart">
+          <i class="fa fa-shopping-cart fa-xl"></i>
+          <span>{{ itemCount }}</span>
+        </li> -->
+
+
+        <!-- <button type="button" class="btn btn-primary position-relative">
+          <i class="fa-solid fa-cart-shopping"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">+99 <span class="visually-hidden">unread messages</span></span>
+        </button> -->
+
+        <button type="button" class="btn position-relative" style="background-color: white;" routerLink="/home/cart">
+          <i class="fa-solid fa-cart-shopping fa-xl"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ itemCount }}<span class="visually-hidden">unread messages</span></span>
+        </button>
+        
+        
         
 
 
-
-        &nbsp;
-        <!-- add to cart in navbar -->
-        <li class="cart">
-          <i class="fa fa-shopping-cart fa-xl"></i>
-          <span>{{ itemCount }}</span>
-        </li>
+        
       </ul>
     </div>
   </div>

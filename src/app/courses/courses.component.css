@@ -27,6 +27,23 @@
 .twoF{
     border-radius: 20px;
 }
+.card-upper{
+  /* background-color: rgb(130, 130, 255); */
+  height: 180px;
+}
+
+@media screen and (max-width:991px) {
+  .card-upper{
+  /* background-color: rgb(130, 130, 255); */
+  height: 240px;
+}
+}
+@media screen and (max-width:576px) {
+  .card-upper{
+  /* background-color: rgb(130, 130, 255); */
+  height:180px;
+}
+}
 
 
 

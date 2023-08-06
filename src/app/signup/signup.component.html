@@ -25,12 +25,25 @@
         <div *ngIf="signupForm.get('first_name')?.touched && signupForm.get('first_name')?.hasError('required')">
             <p style="color: #FE0000;">* Required</p>
         </div>
+        <div *ngIf=" signupForm.get('first_name')?.touched && signupForm.get('first_name')?.hasError('pattern')" class="text-danger">
+          First name must start with a capital letter and contain only alphabets
+        </div>
+        <div *ngIf=" signupForm.get('first_name')?.touched && signupForm.get('first_name')?.hasError('minlength')" class="text-danger">
+          First name must have a minimum length of 3
+        </div>
 
         <!-- last name -->
         <label for="last_name">Last Name</label>
         <input type="text" id="last_name" formControlName="last_name" placeholder="Enter your last name"/>
         <div *ngIf="signupForm.get('last_name')?.touched && signupForm.get('last_name')?.hasError('required')">
             <p style="color: #FE0000;">* Required</p>
+        </div>
+
+        <div *ngIf="signupForm.get('last_name')?.touched && signupForm.get('last_name')?.hasError('minlength')"class="text-danger">
+          Last name must have a minimum length of 2
+        </div>
+        <div *ngIf="signupForm.get('last_name')?.touched && signupForm.get('last_name')?.hasError('maxlength')"class="text-danger">
+          Last name must have a maximum length of 20
         </div>
 
         <!-- right now i can't use this here -->
@@ -53,6 +66,9 @@
         <div *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.hasError('required')">
             <p style="color: #FE0000;">* Required</p>
         </div>
+        <div *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.hasError('pattern')"class="text-danger">
+            Invalid email format*(abc@gmail.com)
+        </div>
         
         <!-- password -->
         <div class="form-group">
@@ -65,10 +81,12 @@
             <span [ngClass]="passwordVisible ? 'bi bi-eye-slash' : 'bi bi-eye'"></span>
           </button>
         </div>
-       
-
         <div *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.hasError('required')">
             <p style="color: #FE0000;">* Required</p>
+        </div>
+
+        <div *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.hasError('pattern')"class="text-danger">
+            Password must contain at least one letter (capital or small), number, and special characters (#, @, *, or &)
         </div>
       </div>
 
@@ -91,5 +109,3 @@
     </div>
   </div>
 </div>
-
-<router-outlet></router-outlet>
