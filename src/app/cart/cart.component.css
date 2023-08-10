@@ -81,3 +81,28 @@ button:disabled {
 }
 
 
+.container {
+    /* Your existing container styles */
+    position: relative; /* Ensure relative positioning for the button container */
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+  }
+  
+  .checkout-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .checkout-button:hover {
+    background-color: #0056b3;
+  }
+  

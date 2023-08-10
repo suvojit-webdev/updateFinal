@@ -29,7 +29,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
 
-import { PaymentPageComponent } from './payment-page/payment-page.component';
+import { PaymentPageComponent } from './payment-page not uisng/payment-page.component';
 
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideToastr } from 'ngx-toastr';
@@ -38,6 +38,8 @@ import { NgOptimizedImage } from '@angular/common';
 
 // import { BigAmountPipe } from './pipe not use/big-amount.pipe';
 // import { DiscountPipe } from './pipe not use/discount.pipe';
+
+import { CartService } from './allServiceFiles/cart.service';
 
 
 @NgModule({
@@ -62,7 +64,6 @@ import { NgOptimizedImage } from '@angular/common';
     // PaymentPageComponent,
     // BigAmountPipe,
     // DiscountPipe,
-    
   ],
   imports: [
     BrowserModule,
@@ -76,8 +77,8 @@ import { NgOptimizedImage } from '@angular/common';
     NgOptimizedImage,
   ],
   providers: [
-    
     StoreService,
+    CartService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: InterceptorService,

@@ -22,16 +22,17 @@
     </p>
   </div>
 
+  <!-- right now we can't use this here new logic and data upcomoing -->
   <!-- filter1 (A broad selection of courses)-->
-  <div class="container mb-3">
+  <!-- <div class="container mb-3">
     <div class="options-column">
       <button class="btn btn-success" *ngFor="let option of options" (click)="showCard(option)">
         {{ option.title }}
       </button>
-    </div>
+    </div> -->
 
-    <!-- this comment is not working & css name-->
-    <!-- <div class="card small-card" *ngIf="selectedOption">
+  <!-- this comment is not working & css name-->
+  <!-- <div class="card small-card" *ngIf="selectedOption">
       <img [src]="selectedOption.imageSrc" alt="Image"/>
       <div class="card-body text-center">
         <h5 class="card-title">{{ selectedOption.title }}</h5>
@@ -40,7 +41,7 @@
       </div>
     </div> -->
 
-    <div class="card" style="width: 13rem;" *ngIf="selectedOption">
+  <!-- <div class="card" style="width: 13rem;" *ngIf="selectedOption">
       <img [src]="selectedOption.imageSrc" alt="Image" />
       <div class="card-body text-center">
         <h5 class="card-title">{{ selectedOption.title }}</h5>
@@ -48,7 +49,7 @@
         <a (click)="addToCart()" class="btn btn-primary" routerLink="/home/cart">Add to Cart</a>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- Off-canvas sidebar -->
   <!-- <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" [class.show]="selectedOption">
@@ -60,6 +61,7 @@
       <p *ngIf="selectedOption">{{ selectedOption.content }}</p>
       <p *ngIf="selectedOption">Price: {{ selectedOption.price }}</p>
     </div>
+    <button class="btn btn-primary text-center">Checkout</button>
   </div> -->
 
   <!-- error end -->
@@ -67,15 +69,55 @@
 
   <br><br>
 
+  <!-- butoon and data new -->
+  <!-- <div class="container mb-5">
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-center">
+        <div *ngFor="let option of options" class="d-flex flex-column align-items-center mx-3 firstcard">
+          <img [src]="option.imageSrc" alt="{{ option.title }}" class="mb-2" width="100">
+          <span class="mb-2">{{ option.title }}</span>
+          <span class="mb-2">{{ option.price | currency:'INR':'symbol' }}</span>
+          <button class="btn btn-success" (click)="addToCart(option)"><span>Add to Cart</span></button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="container mb-5">
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-center">
+        <div *ngFor="let option of options" class="d-flex flex-column align-items-center mx-3 firstcard">
+          <img [src]="option.imageSrc" alt="{{ option.title }}" class="mb-2" width="100">
+          <span class="mb-2">{{ option.title }}</span>
+          <span class="mb-2">{{ option.price | currency:'INR':'symbol' }}</span>
+          <button class="btn btn-success" (click)="toggleCartButton(option)">
+            <span>{{ option.addToCart ? 'Go to Cart' : 'Add to Cart' }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+
+
+
+
 
 
   <div class="container mb-5">
     <div class="owl-carousel owl-theme">
-      <div class="card" *ngFor="let course of courses" style="height: 400px;">
+      <div class="card" *ngFor="let course of courses" style="height: 420px;">
         <img [src]="course.image" class="card-img-top" />
         <div class="card-body">
           <h5 class="card-title">{{ course.title }}</h5>
           <p class="card-text">{{ course.author }}</p>
+          <ng-container *ngFor="let i of [1, 2, 3, 4, 5]">
+            <i class="bi bi-star-fill" *ngIf="i <= course.stars"></i>
+            <i class="bi bi-star-half" *ngIf="i === course.stars + 0.5"></i>
+          </ng-container>
           <p class="card-text">
             <b class="discounted-price m-2">{{ course.discountedPrice | currency : "INR" }}</b>
             <s><b>{{ course.price | currency : "INR" : "symbol" : "4.2-2" }}</b></s>
@@ -232,7 +274,8 @@
                   <p style="color: red">*Required</p>
                 </ng-container>
 
-                <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.hasError('pattern')" class="text-danger">
+                <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.hasError('pattern')"
+                  class="text-danger">
                   Invalid email format*(abc@example.com)
                 </div>
 
@@ -241,13 +284,15 @@
 
             <div class="form-group">
               <label for="phone"><b>Contact Number</b></label>
-              <input type="number" class="form-control" id="phone" formControlName="phone" placeholder="Contact Number *" />
+              <input type="number" class="form-control" id="phone" formControlName="phone"
+                placeholder="Contact Number *" />
               <ng-container *ngIf="contactForm.get('phone')?.touched">
                 <ng-container *ngIf="contactForm.get('phone')?.hasError('required')">
                   <p style="color: red">*Required</p>
                 </ng-container>
 
-                <div *ngIf=" contactForm.get('phone')?.touched && contactForm.get('phone')?.hasError('pattern')"class="text-danger">
+                <div *ngIf=" contactForm.get('phone')?.touched && contactForm.get('phone')?.hasError('pattern')"
+                  class="text-danger">
                   Phone number must start with 9 and contain only digits
                 </div>
               </ng-container>

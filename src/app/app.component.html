@@ -3,31 +3,15 @@
     <div class="smart-bar" id="smartBar">
       <div class="smart-bar__content">
         <div class="smart-bar__basic-content" data-testid="basic-with-timer">
-          <a data-testid="smart-bar-action-url" routerLink="/pricing">
+          <a data-testid="smart-bar-action-url" routerLink="home/pricing">
             <span data-testid="smart-bar-copy">
-              <span
-                class="smart-bar__title"
-                data-purpose="smart-bar-title"
-                data-testid="smart-bar-title"
-                >Skill up at scale |</span
-              >
-              <span
-                class="smart-bar__subtitle"
-                data-purpose="smart-bar-subtitle"
-                data-testid="smart-bar-subtitle"
-              >
-                Learn why CodeTutor is trusted by 14.4K+ businesses around the
-                world</span
-              >
+              <span class="smart-bar__title" data-purpose="smart-bar-title" data-testid="smart-bar-title">Skill up at
+                scale |</span>
+              <span class="smart-bar__subtitle" data-purpose="smart-bar-subtitle" data-testid="smart-bar-subtitle">
+                Learn why CodeTutor is trusted by 3K+ students</span>
             </span>
           </a>
-          <button
-            class="close-button"
-            aria-label="Close"
-            (click)="closeSmartBar()"
-          >
-            ✕
-          </button>
+          <button class="close-button" aria-label="Close" (click)="closeSmartBar()">✕</button>
         </div>
       </div>
     </div>
@@ -39,15 +23,8 @@
     <a class="navbar-brand" routerLink="/home">
       <img src="assets/img/uplogo.png" alt="Logo" width="150" height="60" />
     </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav" role="button">
@@ -72,14 +49,8 @@
         </ng-container> -->
 
         <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="resourcesDropdown"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            >Resources</a
-          >
+          <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" data-bs-toggle="dropdown"
+            aria-expanded="false">Resources</a>
           <ul class="dropdown-menu" aria-labelledby="resourcesDropdown">
             <li>
               <a class="dropdown-item" routerLink="/home/about">About US</a>
@@ -136,13 +107,14 @@
 
         <ng-container *ngIf="loggedin()">
           <div class="dropdown">
-            <button class="dropdown-toggle transparent-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="dropdown-toggle transparent-button" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
               <img src="assets/img/navprofile.png" alt="" />
             </button>
 
             <ul class="dropdown-menu profile">
               <li>
-                <a class="dropdown-item" routerLink="/profile"><i class="fa-solid fa-user"></i>  My Profile</a>
+                <a class="dropdown-item" routerLink="/profile"><i class="fa-solid fa-user"></i> My Profile</a>
               </li>
               <!-- <hr>
               <li>
@@ -150,7 +122,8 @@
               </li> -->
               <hr>
               <li>
-                <a class="dropdown-item" (click)="loggingOut()"><i class="fa-solid fa-right-from-bracket"></i>  Logout</a>
+                <a class="dropdown-item" (click)="loggingOut()"><i class="fa-solid fa-right-from-bracket"></i>
+                  Logout</a>
               </li>
             </ul>
           </div>
@@ -168,16 +141,31 @@
           <i class="fa-solid fa-cart-shopping"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">+99 <span class="visually-hidden">unread messages</span></span>
         </button> -->
 
+        <!-- <button type="button" class="btn position-relative" style="background-color: white;" routerLink="/home/cart">
+          <i class="fa-solid fa-cart-shopping fa-xl"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{ itemCount }}<span class="visually-hidden">unread messages</span></span>
+        </button> -->
+
+        <!-- <button type="button" class="btn position-relative" style="background-color: white;" routerLink="/home/cart">
+          <i class="fa-solid fa-cart-shopping fa-xl"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{ cartItemCount }}<span class="visually-hidden">items in cart</span>
+          </span>
+        </button> -->
+
         <button type="button" class="btn position-relative" style="background-color: white;" routerLink="/home/cart">
           <i class="fa-solid fa-cart-shopping fa-xl"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ itemCount }}<span class="visually-hidden">unread messages</span></span>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{ cartItemCount }}<span class="visually-hidden">items in cart</span>
+          </span>
         </button>
         
-        
-        
 
 
-        
+
+
+
       </ul>
     </div>
   </div>

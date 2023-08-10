@@ -10,9 +10,7 @@ import { StoreService } from './store.service';
 export class DataService {
 
   api_url = 'https://wtsacademy.dedicateddevelopers.us/api/user/signup';
-  
   api_urlSign = 'https://wtsacademy.dedicateddevelopers.us/api/user/signin';
-
   profile_api = 'https://wtsacademy.dedicateddevelopers.us/api/user/profile-details';
 
   constructor(private http:HttpClient, private auth:StoreService) {}

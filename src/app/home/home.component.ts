@@ -6,6 +6,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 //service
 import { HomeCourseService } from '../allServiceFiles/home-course.service';
 
+import { CartService } from '../allServiceFiles/cart.service';
+import { Router } from '@angular/router';
+
+
+
 //jquery for owl carousal
 declare var $: any;
 
@@ -68,11 +73,36 @@ export class HomeComponent implements AfterViewInit, OnInit{
   }
 
 // cart count
-cartItemCount: number = 0;
+// cartItemCount: number = 0;
 
-  addToCart() {
-    this.cartItemCount++;
+//   addToCart() {
+//     this.cartItemCount++;
+//   }
+
+// neww
+// cartItemCount!:any;
+// addToCart(option: any) {
+//   this.cartItemCount++;
+// }
+
+addToCart(option: any) {
+  this.cartService.addToCart(option);
+}
+
+goToCart() {
+  this.router.navigate(['/home/cart']);
+}
+
+toggleCartButton(option: any) {
+  option.addToCart = !option.addToCart;
+  if (option.addToCart) {
+    this.addToCart(option);
+  } else {
+    this.goToCart();
   }
+}
+
+
 
 // form
 contactForm!: FormGroup;
@@ -126,7 +156,7 @@ cards:any[];
 
 events: any[];
 
-  constructor(private formBuilder: FormBuilder,
+  constructor(private formBuilder: FormBuilder,private cartService: CartService, private router:Router,
     private courseService: HomeCourseService) 
     {
       this.courses = this.courseService.getCourses(); 

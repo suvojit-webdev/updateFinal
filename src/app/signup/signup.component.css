@@ -36,7 +36,8 @@
   
   .signup-right input[type="text"],
   .signup-right input[type="email"],
-  .signup-right input[type="password"] {
+  .signup-right input[type="password"] 
+  {
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -61,6 +62,9 @@
     font-size: 12px;
   }
 
+
+  
+
   /* Custom styles for the mainHide button */
 .mainHide {
   background-color: transparent;
@@ -81,3 +85,35 @@
 .mainHide .bi-eye {
   color: #28a745; /* Green color when password is hidden */
 }
+
+
+
+/* Style for the image upload section */
+.imgfile {
+  margin-bottom: 15px;
+}
+
+/* Style for the label */
+.imgfile label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Style for the file input */
+.imgfile input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Optional: Change input appearance when hovering */
+.imgfile input[type="file"]:hover {
+  border-color: #000000;
+  border-width: 2px;
+}
+

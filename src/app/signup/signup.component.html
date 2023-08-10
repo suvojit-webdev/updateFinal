@@ -46,6 +46,14 @@
           Last name must have a maximum length of 20
         </div>
 
+
+        <!-- images upload-->
+        <label for="img">Image:</label>
+        <div class="mb-3 imgfile">
+          <input type="file" formControlName="profile_pic" id="profile_pic" (change)="fileSelect($event)">
+        </div>
+
+
         <!-- right now i can't use this here -->
         <!-- gender -->
         <!-- <label for="gender">Gender:</label>

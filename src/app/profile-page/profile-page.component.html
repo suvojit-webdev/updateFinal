@@ -3,7 +3,13 @@
 <div class="container">
     <h2>Hello,</h2>
     <h2>{{ userDetails?.first_name}} {{userDetails?.last_name }}</h2>
-    <img src="assets/img/pfIMG2.png" alt="">
+    <!-- <img src="assets/img/pfIMG2.png" alt=""> -->
+    <!-- for user images -->
+    <!-- <h2>{{ userDetails?.profile_pic}}</h2> -->
+  <img [src]="img_path" alt="profile_img" width="200" />
+
+
     <br /><br />
+    <h2>{{ userDetails?.email}}</h2>
     <button (click)="loggingOut()" class="btn">Logout</button>
   </div>

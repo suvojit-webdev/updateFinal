@@ -2,6 +2,10 @@ import { Component,Input, OnInit } from '@angular/core';
 import { StoreService } from './allServiceFiles/store.service';
 import { Router } from '@angular/router';
 
+import { CartService } from './allServiceFiles/cart.service';
+
+import { ToastService } from './allServiceFiles/toast.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,8 +16,7 @@ export class AppComponent implements OnInit{
 
   @Input() itemCount: number = 0;
 
-  // cart count
-  cartItemCount: number = 0;
+  
 
   addToCart() {
     this.cartItemCount++;
@@ -29,13 +32,15 @@ export class AppComponent implements OnInit{
   f_name!: any;
   l_name!: any;
 
-  
-
-  constructor(private storeSer: StoreService, private route: Router) {}
+// cart count
+cartItemCount: number = 0;
+  constructor(private storeSer: StoreService, private route: Router,private cartService: CartService,private toaster: ToastService,) {}
   
   ngOnInit(): void {
    console.log(this.loggedin());
-   
+   this.cartService.cartItemCount$.subscribe((count) => {
+    this.cartItemCount = count;
+  });
 
   }
   loggedin() {
@@ -53,7 +58,8 @@ export class AppComponent implements OnInit{
 
   loggingOut(){
     this.storeSer.getDestroy();
-    alert("Logged Out");
+    // alert("Logged Out");
+    this.toaster.ShowSuccess('Logged Out');
     this.route.navigate(['/login']);
   }
 

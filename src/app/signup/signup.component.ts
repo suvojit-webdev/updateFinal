@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
 import { DataService } from '../allServiceFiles/data.service';
 import { Router } from '@angular/router';
+import { ToastService } from '../allServiceFiles/toast.service';
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -11,13 +11,15 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
   signupForm!: FormGroup;
-
   formValues!: any;
+  imgData!: any;
+
 
   constructor(
     private formBuilder: FormBuilder,
     private regService: DataService,
-    private route: Router
+    private route: Router,
+    private toaster: ToastService,
   ) {}
 
   ngOnInit() {
@@ -29,7 +31,15 @@ export class SignupComponent implements OnInit {
       password: ['', [Validators.required,Validators.pattern(/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@#*&])[A-Za-z\d@#*&]{8,}$/)]],
       remember: [false],
       privacy: [false],
+      profile_pic: ['', Validators.required],
+
     });
+  }
+
+  //image storage
+  fileSelect(ev: any) {
+    console.log(ev.target.files[0]);
+    this.imgData = ev.target.files[0];
   }
 
   clearForm() {
@@ -54,17 +64,22 @@ export class SignupComponent implements OnInit {
     formData.append('last_name', this.formValues.last_name);
     formData.append('email', this.formValues.email);
     formData.append('password', this.formValues.password);
+    formData.append('profile_pic', this.imgData, this.imgData.name);
+
 
     this.regService.rgdata(formData).subscribe((res: any) => {
       console.log('response after posting', res);
 
       if (res.status == 200) {
-        alert('SignUp Done ✔️');
+        // alert('SignUp Done ✔️');
+        this.toaster.ShowSuccess('SignUp Done ✔️');
         this.route.navigate(['/login']);
       // Clear the form after successful registration
       this.clearForm();
       } else {
-        alert('❌ Failed ❌');
+        // alert('❌ Failed ❌');
+        this.toaster.ShowError('❌ Failed ❌');
+        
       }
     });
   }

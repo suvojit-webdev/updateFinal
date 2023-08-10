@@ -130,7 +130,7 @@
         <button type="button" class="btn btn-primary" [disabled]="products.length === 0">Checkout</button>
     </div> -->
 
-      <div class="container">
+      <!-- <div class="container">
         <h2>Shopping Cart</h2>
         <div class="cart-items">
             <div class="cart-item" *ngFor="let product of products">
@@ -155,6 +155,61 @@
             <button (click)="applyCoupon()">Apply Coupon</button>
         </div>
         <button type="button" class="btn btn-primary" [disabled]="products.length === 0" routerLink="/home/payment">Checkout</button>
-    </div>
-    
-    
+    </div> -->
+
+
+
+<!--total item  -->
+<!-- <div>
+  <h2>Your Cart</h2>
+  <p>Total items in cart: {{ cartItemCount }}</p>
+</div> -->
+
+
+<!-- <div class="container">
+  <h2>Your Cart</h2>
+  <p>Total items in cart: {{ cartItemCount }}</p>
+
+  <div *ngFor="let item of cartItems" class="cart-item">
+    <img [src]="item.imageSrc" alt="{{ item.title }}" width="50">
+    <span>{{ item.title }}</span>
+    <span class="mb-2">{{ item.price | currency:'INR':'symbol' }}</span>
+  </div>
+</div> -->
+
+
+<!-- <div class="container">
+  <h2>Your Cart</h2>
+  <p>Total items in cart: {{ cartItemCount }}</p>
+
+  <div *ngFor="let item of cartItems; let i = index" class="cart-item">
+    <img [src]="item.imageSrc" alt="{{ item.title }}" width="50">
+    <span>{{ item.title }}</span>
+    <span class="mb-2">{{ item.price | currency:'INR':'symbol' }}</span>
+    <button (click)="removeItem(i)">Remove</button>
+  </div>
+
+  Back Button
+  <button (click)="goBack()">Back</button>
+</div> -->
+
+
+<div class="container">
+  <h2>Your Cart</h2>
+  <p>Total items in cart: {{ cartItemCount }}</p>
+
+  <div *ngFor="let item of cartItems; let i = index" class="cart-item">
+    <img [src]="item.imageSrc" alt="{{ item.title }}" width="50">
+    <span>{{ item.title }}</span>
+    <span class="mb-2">{{ item.price | currency:'INR':'symbol' }}</span>
+    <button (click)="removeItem(i)">Remove</button>
+  </div>
+
+  <!-- Back and Checkout Buttons -->
+  <div class="button-container">
+    <button (click)="goBack()">Back</button>
+    <button class="checkout-button" routerLink="/home/payment">Checkout</button>
+  </div>
+</div>
+
+

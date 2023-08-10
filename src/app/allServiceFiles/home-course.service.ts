@@ -13,6 +13,7 @@ export class HomeCourseService {
       price: 3199,
       discountedPrice: 699,
       isBestSeller: true,
+      stars: 4.5,
     },
     {
       id: 2,
@@ -21,6 +22,7 @@ export class HomeCourseService {
       author: 'By Al Sweigart',
       price: 3199,
       discountedPrice: 699,
+      stars: 4.5,
     },
     {
       id: 3,
@@ -30,6 +32,7 @@ export class HomeCourseService {
         'By Kirill Eremenko,Hadelin de Ponteves,SuperDataScience Team,Ligency Team',
       price: 3199,
       discountedPrice: 699,
+      stars: 4.5,
     },
     {
       id: 4,
@@ -39,6 +42,7 @@ export class HomeCourseService {
       price: 3199,
       discountedPrice: 699,
       isBestSeller: true,
+      stars: 4.5,
     },
     {
       id: 5,
@@ -47,6 +51,7 @@ export class HomeCourseService {
       author: 'By Kyle Pew,Office Newb',
       price: 3199,
       discountedPrice: 699,
+      stars: 4.5,
     },
     {
       id: 6,
@@ -56,6 +61,7 @@ export class HomeCourseService {
       price: 3199,
       discountedPrice: 699,
       isBestSeller: true,
+      stars: 4.5,
     },
     {
       id: 7,
@@ -64,6 +70,7 @@ export class HomeCourseService {
       author: 'By Colt Steele',
       price: 3199,
       discountedPrice: 699,
+      stars: 4.5,
     },
     {
       id: 8,
@@ -72,6 +79,7 @@ export class HomeCourseService {
       author: 'By Jonas Schmedtmann',
       price: 3199,
       discountedPrice: 699,
+      stars: 4.5,
     },
     {
       id: 9,
@@ -80,6 +88,7 @@ export class HomeCourseService {
       author: 'By Hemanth kumar',
       price: 3199,
       discountedPrice: 699,
+      stars: 4.5,
     },
     {
       id: 10,
@@ -88,6 +97,7 @@ export class HomeCourseService {
       author: 'By Jose Portilla',
       price: 3199,
       discountedPrice: 699,
+      stars: 4.5,
     },
     {
       id: 11,
@@ -97,6 +107,7 @@ export class HomeCourseService {
       price: 3199,
       discountedPrice: 699,
       isBestSeller: true,
+      stars: 4.5,
     },
     {
       id: 12,
@@ -105,6 +116,7 @@ export class HomeCourseService {
       author: 'By Brent Eviston',
       price: 3199,
       discountedPrice: 699,
+      stars: 4.5,
     },
   ];
 
@@ -236,21 +248,21 @@ export class HomeCourseService {
         stars: 4.5,
         reviews: '100+',
         image: 'assets/img/cardrate/facebook.png',
-        company:'Facebook',
+        company: 'Facebook',
       },
       {
         rating: 4.8,
         stars: 4.5,
         reviews: '1000+',
         image: 'assets/img/cardrate/googlenew.png',
-        company:'Google',
+        company: 'Google',
       },
       {
         rating: '50+',
         reviews: 'Questions asked',
         answered: '5000 answered',
         image: 'assets/img/cardrate/quora.png',
-        company:'Quora',
+        company: 'Quora',
       },
     ];
   }
@@ -288,12 +300,6 @@ export class HomeCourseService {
         title: 'Hackathon Compitation',
         date: '10:00 AM, 30 September, 2023',
       },
-
-   
-      
     ];
   }
-
-
-  
 }

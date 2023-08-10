@@ -82,11 +82,13 @@
                 <button class="btn btn-primary" (click)="submitComment()">Submit</button>
             </div>
             <div class="comments-list">
+                <h3>Comments ({{ comments.length }})</h3> <!-- Display comment count -->
                 <div class="comment" *ngFor="let comment of comments">
                     <h4>{{ comment.author }}</h4>
                     <p>{{ comment.text }}</p>
-                    <p class="comment-date">{{ comment.date | date }}</p>
+                    <b><p class="comment-date">{{ comment.date | date }}</p></b>
                 </div>
             </div>
         </div>
     </div>
+    

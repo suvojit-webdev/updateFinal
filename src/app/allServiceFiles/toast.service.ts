@@ -14,7 +14,7 @@ export class ToastService {
   ShowInfo(msg: any) {
     this.toastr.info(msg);
   }
-  ShowErr(msg: any) {
+  ShowError(msg: any) {
     this.toastr.error(msg);
   }
   ShowWarn(msg: any) {

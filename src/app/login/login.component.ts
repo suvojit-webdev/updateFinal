@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataService } from '../allServiceFiles/data.service';
 import { StoreService } from '../allServiceFiles/store.service';
 import { Router } from '@angular/router';
-
 import { ToastService } from '../allServiceFiles/toast.service';
 
 @Component({
@@ -42,9 +41,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       // Handle the form submission here
       console.log(this.loginForm.value);
-
       const formData: FormData = new FormData();
-
       formData.append('email', this.loginForm.value.email);
       formData.append('password', this.loginForm.value.password);
 
@@ -64,7 +61,7 @@ export class LoginComponent implements OnInit {
             );
           } else {
             // alert('Invalid Input ❌');
-            this.toaster.ShowErr('Invalid Input');
+            this.toaster.ShowError('Invalid Input');
 
           }
         },
