@@ -9,6 +9,9 @@ import { HomeCourseService } from '../allServiceFiles/home-course.service';
 import { CartService } from '../allServiceFiles/cart.service';
 import { Router } from '@angular/router';
 
+import { ToastService } from '../allServiceFiles/toast.service';
+
+
 
 
 //jquery for owl carousal
@@ -157,7 +160,7 @@ cards:any[];
 events: any[];
 
   constructor(private formBuilder: FormBuilder,private cartService: CartService, private router:Router,
-    private courseService: HomeCourseService) 
+    private courseService: HomeCourseService,private toaster: ToastService,) 
     {
       this.courses = this.courseService.getCourses(); 
       this.testimonials = this.courseService.getTestimonials();
@@ -175,7 +178,8 @@ events: any[];
   }
   initForm() {
     this.contactForm = this.formBuilder.group({
-      fullName: ['', [Validators.required,Validators.pattern(/^[A-Z][a-zA-Z]*$/), Validators.minLength(3)]],
+      firstName: ['', [Validators.required,Validators.pattern(/^[A-Z][a-zA-Z]*$/),Validators.minLength(3),Validators.maxLength(20)]],
+      lastName: ['', [Validators.required,Validators.pattern(/^[A-Z][a-zA-Z]*$/),Validators.minLength(3), Validators.maxLength(20)]],
       email: ['', [Validators.required, Validators.email,Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)]],
       phone: ['', [Validators.required,Validators.pattern(/^9\d{9}$/)]],
       location: ['', Validators.required],
@@ -185,7 +189,9 @@ events: any[];
     if (this.contactForm.valid) {
       // Display the submitted data
       console.log('Submitted Data:', this.contactForm.value);
-      alert("Contact Data Submitted")
+      // alert("Contact Data Submitted")
+      this.toaster.ShowSuccess('Contact Data Submitted');
+
 
       // Clear the form
       this.clearForm();

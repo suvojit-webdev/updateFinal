@@ -83,6 +83,7 @@
     </div>
   </div> -->
 
+  <!-- main cat -->
   <div class="container mb-5">
     <div class="row">
       <div class="col-md-12 d-flex justify-content-center">
@@ -97,7 +98,35 @@
       </div>
     </div>
   </div>
+
+<!-- 
+  <div class="container mb-5">
+    <div class="row justify-content-center">
+      <div *ngFor="let option of options" class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4 d-flex justify-content-center">
+        <div class="card align-items-center firstcard" style="width: 150px;">
+          <img [src]="option.imageSrc" alt="{{ option.title }}" class="card-img-top mt-3" style="max-height: 100px; width: auto;">
+          <div class="card-body text-center">
+            <h6 class="card-title" style="font-size: 16px;">{{ option.title }}</h6>
+            <p class="card-text" style="font-size: 14px;">{{ option.price | currency:'INR':'symbol' }}</p>
+            <button class="btn btn-sm btn-success" (click)="toggleCartButton(option)" style="font-size: 14px;">
+              <span>{{ option.addToCart ? 'Go to Cart' : 'Add to Cart' }}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
   
+  
+
+  
+  
+  
+  
+  
+  
+
 
   
   
@@ -182,7 +211,7 @@
       </b>
       <div class="row">
         <div class="col-md-3" *ngFor="let category of categories">
-          <div class="card mb-4">
+          <div class="card mb-4 topa">
             <img [src]="category.image" class="card-img-top category-image mt-4">
             <div class="card-body">
               <h5 class="card-title">{{ category.title }}</h5>
@@ -193,6 +222,8 @@
       </div>
     </div>
   </section>
+
+  
 
 
 
@@ -248,23 +279,42 @@
         <div class="col-md-7 mt-5">
           <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
-              <label for="name"><b>Full Name</b></label>
-              <input type="text" class="form-control" id="name" formControlName="fullName"
-                placeholder="Enter Full Name *" />
-              <ng-container *ngIf="contactForm.get('fullName')?.touched">
-                <ng-container *ngIf="contactForm.get('fullName')?.hasError('required')">
+              <label for="name"><b>First Name</b></label>
+              <input type="text" class="form-control" id="name" formControlName="firstName"
+                placeholder="Enter First Name *" />
+              <ng-container *ngIf="contactForm.get('firstName')?.touched">
+                <ng-container *ngIf="contactForm.get('firstName')?.hasError('required')">
                   <p style="color: red">*Required</p>
                 </ng-container>
-                <div *ngIf=" contactForm.get('fullName')?.touched && contactForm.get('fullName')?.hasError('pattern')"
+                <div *ngIf=" contactForm.get('firstName')?.touched && contactForm.get('firstName')?.hasError('pattern')"
                   class="text-danger">
                   First name must start with a capital letter and contain only alphabets
                 </div>
-                <div *ngIf=" contactForm.get('fullName')?.touched && contactForm.get('fullName')?.hasError('minlength')"
+                <div *ngIf=" contactForm.get('firstName')?.touched && contactForm.get('firstName')?.hasError('minlength')"
                   class="text-danger">
                   First name must have a minimum length of 3
                 </div>
               </ng-container>
             </div>
+            <div class="form-group">
+              <label for="name"><b>Last Name</b></label>
+              <input type="text" class="form-control" id="name" formControlName="lastName"
+                placeholder="Enter Last Name *" />
+              <ng-container *ngIf="contactForm.get('lastName')?.touched">
+                <ng-container *ngIf="contactForm.get('lastName')?.hasError('required')">
+                  <p style="color: red">*Required</p>
+                </ng-container>
+                <div *ngIf=" contactForm.get('lastName')?.touched && contactForm.get('lastName')?.hasError('pattern')"
+                  class="text-danger">
+                  Last name must start with a capital letter and contain only alphabets
+                </div>
+                <div *ngIf=" contactForm.get('lastName')?.touched && contactForm.get('lastName')?.hasError('minlength')"
+                  class="text-danger">
+                  Last name must have a minimum length of 3
+                </div>
+              </ng-container>
+            </div>
+
             <div class="form-group">
               <label for="email"><b>Email</b></label>
               <input type="email" class="form-control" id="email" formControlName="email"

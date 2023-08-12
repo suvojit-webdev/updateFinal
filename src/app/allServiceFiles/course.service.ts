@@ -11,62 +11,62 @@ export class CourseService {
       { 
         id: 1,
         image: 'assets/img/courses/Design Courses/1.jpg',
-        title: 'Course 1',
-        description: 'Description for course 1'  
+        title: 'Adobe Acrobat Pro',
+        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, quae!'  
       },
       {
         id: 2, 
         image: 'assets/img/courses/Design Courses/2.jpg',
-        title: 'Course 2',
-        description: 'Description for course 2'
+        title: 'Drupal 7 for Beginners',
+        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, quae!'
       }, 
       {
         id: 3, 
         image: 'assets/img/courses/Design Courses/3.jpg',
-        title: 'Course 3',
-        description: 'Description for course 3'
+        title: 'Design Making',
+        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, quae!'
       }, 
       {
         id: 4, 
         image: 'assets/img/courses/Design Courses/4.jpg',
-        title: 'Course 4',
-        description: 'Description for course 4'
+        title: 'Adobe Premiere Pro',
+        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, quae!'
       }, 
       {
         id: 5, 
         image: 'assets/img/courses/Design Courses/5.jpg',
-        title: 'Course 5',
-        description: 'Description for course 5'
+        title: 'Responsive Design',
+        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, quae!'
       },
       { 
         id: 6,
         image: 'assets/img/courses/Design Courses/1.jpg',
-        title: 'Course 6',
-        description: 'Description for course 6'  
+        title: 'Adobe Acrobat Pro',
+        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, quae!'  
       },
       {
         id: 7, 
         image: 'assets/img/courses/Design Courses/2.jpg',
-        title: 'Course 7',
-        description: 'Description for course 7'
+        title: 'Drupal 7 for Beginners',
+        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, quae!'
       }, 
       {
         id: 8, 
         image: 'assets/img/courses/Design Courses/3.jpg',
-        title: 'Course 8',
-        description: 'Description for course 8'
+        title: 'Design Making',
+        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, quae!'
       }, 
       {
         id: 9, 
         image: 'assets/img/courses/Design Courses/4.jpg',
-        title: 'Course 9',
-        description: 'Description for course 9'
+        title: 'Adobe Premiere Pro',
+        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, quae!'
       }, 
       {
         id: 10, 
         image: 'assets/img/courses/Design Courses/5.jpg',
-        title: 'Course 10',
-        description: 'Description for course 10'
+        title: 'Responsive Design',
+        description: 'DLorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, quae!'
       },
     ];
   }
@@ -76,37 +76,37 @@ export class CourseService {
       {
         id: 1,
         image: 'assets/img/courses/Design Courses/feature/1.jpg',
-        title: 'Card 1 Title',
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eunisl eget risus blandit condimentum."
+        title: 'Ultimate Affinity Designer 2 on iPad The Complete Course',
+        text: "Become a Professional in Vector Art and Design with Newest Affinity Designer 2"
       },
       {
         id: 2,
         image: 'assets/img/courses/Design Courses/feature/2.jpg',
-        title: 'Card 2 Title',
+        title: 'Blender 3D Full Course (Project Based)',
         text: "Nulla facilisi. Phasellus malesuada, quam ut sollicitudin lacinia,elit odio aliquam orci."
       },
       {
         id: 3,
         image: 'assets/img/courses/Design Courses/feature/3.jpg',
-        title: 'Card 3 Title',
+        title: 'The most practical UX design course for beginners ever!',
         text: "Etiam eu nisi ac mauris iaculis facilisis id et arcu. Sed bibendum velit ut nisi venenatis."
       },
       {
         id: 4,
         image: 'assets/img/courses/Design Courses/feature/1.jpg',
-        title: 'Card 1 Title',
+        title: 'Ultimate Affinity Designer 2 on iPad The Complete Course',
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eunisl eget risus blandit condimentum."
       },
       {
         id: 5,
         image: 'assets/img/courses/Design Courses/feature/2.jpg',
-        title: 'Card 2 Title',
+        title: 'Blender 3D Full Course (Project Based)',
         text: "Nulla facilisi. Phasellus malesuada, quam ut sollicitudin lacinia,elit odio aliquam orci."
       },
       {
         id: 6,
         image: 'assets/img/courses/Design Courses/feature/3.jpg',
-        title: 'Card 3 Title',
+        title: 'The most practical UX design course for beginners ever!',
         text: "Etiam eu nisi ac mauris iaculis facilisis id et arcu. Sed bibendum velit ut nisi venenatis."
       },
 

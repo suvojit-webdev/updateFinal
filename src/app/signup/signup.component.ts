@@ -72,7 +72,7 @@ export class SignupComponent implements OnInit {
 
       if (res.status == 200) {
         // alert('SignUp Done ✔️');
-        this.toaster.ShowSuccess('SignUp Done ✔️');
+        this.toaster.ShowSuccess('SignUp Done');
         this.route.navigate(['/login']);
       // Clear the form after successful registration
       this.clearForm();
